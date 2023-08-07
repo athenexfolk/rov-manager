@@ -1,0 +1,34 @@
+<div class="fixed bg-black/70 backdrop-blur top-0 left-0 w-full h-full p-4 text-white overflow-y-auto">
+  <div class="flex justify-end items-center">
+    <button [routerLink]="['/gbp']" class="p-4">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <div>
+    <div class="flex gap-8 p-4 justify-center font-semibold">
+      <button (click)="filterHero('')">
+        All
+      </button>
+      <button (click)="filterHero('DSL')">
+        Dark Slayer Lane
+      </button>
+      <button (click)="filterHero('JGL')">
+        Jungle Lane
+      </button>
+      <button (click)="filterHero('ADL')">
+        Abyssal Dragon Lane
+      </button>
+      <button (click)="filterHero('MID')">
+        Mid Lane
+      </button>
+      <button (click)="filterHero('ROAM')">
+        Roaming
+      </button>
+    </div>
+    <div class="flex flex-wrap gap-8 p-4">
+      <app-hero-avatar *ngFor="let hero of heroes" [hero]="hero" (click)="selectHero(hero)" [ngClass]="{'grayscale':hero.isUsed}"></app-hero-avatar>
+    </div>
+  </div>
+</div>

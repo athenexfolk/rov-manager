@@ -1,0 +1,13 @@
+<div class="relative group hover:scale-110 transition" [ngClass]="{'cursor-pointer': !hero.isUsed, 'cursor-not-allowed': hero.isUsed}">
+  <div class="w-20 h-20 rounded-lg bg-yellow-200 relative overflow-hidden">
+    <img src="assets/hero/{{hero.avatar}}" class="w-full h-full object-cover">
+  </div>
+  <p class="text-[10px] text-center">{{hero.name}}</p>
+  <button *ngIf="isRemovable" (click)="removeSelf()" class="absolute -top-2 -right-2 invisible group-hover:visible">
+    <div class="bg-red-700 text-white p-1 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+  </button>
+</div>

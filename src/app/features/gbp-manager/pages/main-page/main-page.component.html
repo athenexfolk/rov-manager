@@ -1,0 +1,7 @@
+<div class="bg-zinc-800 text-zinc-50 p-4 min-h-screen">
+  <div class="grid grid-cols-1 gap-4">
+    <app-configuration (numberOfGame)="getNumberOfGame($event)"></app-configuration>
+    <app-game-group [maxGame]="maxGame"></app-game-group>
+  </div>
+</div>
+<router-outlet></router-outlet>

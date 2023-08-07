@@ -1,0 +1,11 @@
+<div class="h-24 flex flex-wrap gap-4 items-center">
+  <p class="text-green-600 font-bold">PICK</p>
+  <div class="flex gap-4">
+    <app-hero-avatar *ngFor="let hero of pickSlot; let i = index" [isRemovable]="true" [hero]="hero" (removeEmitter)="remove(i,hero)"></app-hero-avatar>
+  </div>
+  <button (click)="pick()" class="p-2 rounded-full bg-green-600 text-zinc-100 flex justify-center items-center" [disabled]="pickSlot.length === maxPick" [ngClass]="{'bg-zinc-300': pickSlot.length === maxPick}">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+  </button>
+</div>

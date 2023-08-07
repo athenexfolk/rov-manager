@@ -1,0 +1,19 @@
+<div>
+  <p class="text-3xl font-black mb-2">Game {{gameNo}}</p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="p-2">
+        <p class="text-2xl text-center font-semibold">Ally</p>
+      <div class="grid grid-cols-1 gap-4 p-4">
+        <app-ban-slot [forGameNo]="gameNo" [team]="'ally'"></app-ban-slot>
+        <app-pick-slot [forGameNo]="gameNo" [team]="'ally'"></app-pick-slot>
+      </div>
+    </div>
+    <div class="p-2">
+      <p class="text-2xl text-center font-semibold">Enemy</p>
+      <div class="grid grid-cols-1 gap-4 p-4">
+        <app-ban-slot [forGameNo]="gameNo" [team]="'enemy'"></app-ban-slot>
+        <app-pick-slot [forGameNo]="gameNo" [team]="'enemy'"></app-pick-slot>
+      </div>
+    </div>
+  </div>
+</div>

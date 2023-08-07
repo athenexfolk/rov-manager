@@ -1,0 +1,10 @@
+<div class="flex justify-end p-4 gap-x-6">
+  <button (click)="createGame()" class="px-4 py-2 rounded-lg font-bold bg-green-600 text-zinc-100" [disabled]="this.gameCount >= this.maxGame" [ngClass]="{'bg-zinc-200': this.gameCount >= this.maxGame}">Add game</button>
+  <button (click)="clearGame()" class="px-4 py-2 rounded-lg font-bold bg-red-600 text-zinc-100" [disabled]="!this.games.length" [ngClass]="{'bg-zinc-200': !this.games.length}">Clear All</button>
+</div>
+<div *ngIf="gameCount; else zeroGame" class="grid grid-cols-1 gap-4">
+  <app-game *ngFor="let game of games; let i = index" [gameNo]="i+1"></app-game>
+</div>
+<ng-template #zeroGame>
+  <p class="p-6 text-center text-2xl font-bold text-zinc-400">Game is empty</p>
+</ng-template>
